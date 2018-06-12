@@ -13,10 +13,11 @@ Imports:
     dplyr (>= 0.7.5),
     mapdata (>= 2.2-6),
     magrittr (>= 1.5),
+    maps (>= 3.1.1),
     readr (>= 1.1.1), 
     tidyr (>= 0.8.1),
     tibble (>= 1.4.2)
 Suggests: knitr,
     rmarkdown,
     testthat
-VignetteBuilder: knitr
+VignetteBuilder: knitr 
