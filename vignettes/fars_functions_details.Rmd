@@ -23,13 +23,15 @@ In order to load the data for a single year, two functions must be used.
 `fars_read()`
 
 ```{r, echo=FALSE, results='asis'}
-fn <- make_filename(2013); 
+fn <- make_filename(2013) 
+fn
 ```
 
 This assigns the value `accident_[argument].csv.bz2`, in this case `accident_2013.csv.bz2`
 
 ```{r, echo=FALSE, results='asis'}
-fars_2013 <- fars_read(fn); 
+fars_2013 <- fars_read(fn)
+fars_2013
 ```
 
 This command reads in the single FARS file; in this case, accident_2013.csv.bz2
@@ -43,7 +45,8 @@ This function can take a single year as input (shown below) and returns a list c
 
 
 ```{r, echo=FALSE, results='asis'}
-fars_2013 <- fars_read_years(2013); 
+fars_2013 <- fars_read_years(2013)
+fars_2013
 ```
 
 ### Retrieve for Multiple Years
@@ -52,18 +55,27 @@ To load and explore the fatality data for multiple years, we still use the `fars
 
 
 ```{r, echo=FALSE, results='asis'}
-fars_2014 <- fars_read_years(2013:2015); 
+fars_2013_15 <- fars_read_years(2013:2015)
+fars_2013_15
 ```
 
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+## Summarizing FARS Data 
+Takes specific years (either a single value denoting a single year or a vector of values denoting multiple years, like the input for the `fars_read_years()` function). The output of this function is a summary of counts of accidents for each month and year. 
 
 ```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+fars_summ_2013 <- fars_summarize_years(2013)
+fars_summ_2013
+
+fars_summ_2013_15 <- fars_summarize_years(2013:2015)
+fars_summ_2013_15
 ```
 
-Also a quote using `>`:
+## Mapping Accidents onto States
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+Takes input of a `state.num` (a numerical integer denoting the US state as is shown in the data set) and `year` (numerical integer denoting the year) as arguments and plots the accidents onto a map of the states. If the state number is invalid, an error is thrown. If there are no accidents in that state, a message is returned that there are no accidents to plot. Otherwise, it returns a plot of states with the number of accidents on each states the accidents based on the `year`. Returns an error if `state.num` or if 
+`year` do not exist in the data set.
+
+```{r, echo=FALSE, results='asis'}
+library(mapdata)
+fars_summ <- fars_map_state(20, 2013)
+```
