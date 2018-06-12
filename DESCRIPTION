@@ -12,7 +12,6 @@ RoxygenNote: 6.0.1.9000
 Imports:
     dplyr (>= 0.7.5),
     mapdata (>= 2.2-6),
-    maps (>= 3.3.1), 
     magrittr (>= 1.5),
     readr (>= 1.1.1), 
     tidyr (>= 0.8.1),
