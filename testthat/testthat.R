@@ -1,6 +1,8 @@
 library(testthat)
 library(mapdata)
 library(farsdata)
+
+if(getRversion() >= "2.15.1")  utils::globalVariables(c("."))
 test_that('This map function works!', {
   fn <- make_filename(2013) 
   expect_that(fn, equals("accident_2013.csv.bz2"))
