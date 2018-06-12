@@ -144,12 +144,12 @@ fars_summarize_years <- function(years) {
 #' 
 #' @examples 
 #' \dontrun{
-#' fars_map_state{20, 2013}
-#' fars_map_state{10, 2014}
-#' fars_map_state{30, 2016}
+#' fars_map_state(20, 2013)
+#' fars_map_state(10, 2014)
+#' fars_map_state(30, 2016)
 #' 
-#' fars_map_state{72, 2013} #Error because \code{state.num} doesn't exist
-#' fars_map_state{20, 2020} #Error because \code{year} doesn't exist
+#' fars_map_state(72, 2013) #Error because \code{state.num} doesn't exist
+#' fars_map_state(20, 2020) #Error because \code{year} doesn't exist
 #' }
 #' 
 #' @import dplyr filter

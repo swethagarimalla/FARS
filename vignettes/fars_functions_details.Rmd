@@ -1,7 +1,7 @@
 ---
 title: "Fars Functions Vignette"
 author: "Swetha Garimalla"
-date: "`r Sys.Date()`"
+date: "June 10, 2018"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
