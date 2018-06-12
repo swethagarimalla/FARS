@@ -13,4 +13,4 @@
 #' \dontrun{
 #'  FARS
 #' }
-"FARS"
+NULL
