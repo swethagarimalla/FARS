@@ -9,23 +9,30 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+This package is the fars function package. It is a part of Coursera's Building Packages course online. It
+can be used to analyze the [US National Highway Traffic Safety Administration's Fatality Analysis Reporting System](https://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS)) (a nationwide census of annual fatal motor vehicle accidents).
+
+## Backround
+The data used for this is primarily from the fars_data.zip folder which decompresses to accident reports in 
+`*.csv.bz2` format. 
+
+## Load Data 
+
+In order to load the data for a single year, two functions must be used. 
+`make_filename()`
+`fars_read()`
+
+```{r, echo=FALSE, results='asis'}
+fn <- make_filename(2013); #this assigns the value accident_[argument].csv.bz2, in this case     
+                           #accident_2013.csv.bz2
+
+fars_2013 <- fars_read(fn); #reads in the single FARS file; in this case, accident_2013.csv.bz2
 ```
 
-This package is the fars function package. It is a part of Coursera's Building Packages course online. It
-can be used to analyze the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System (a nationwide census of annual fatal motor vehicle accidents).
 
-The data used for this is primarily from the fars_data.zip folder. 
+## Retrieves Month & Year from the Accident Year Files
 
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
+# Retrieve for a Single Year
 
 The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
 
@@ -33,7 +40,7 @@ The `html_vignette` template includes a basic CSS theme. To override this theme 
       rmarkdown::html_vignette:
         css: mystyles.css
 
-## Figures
+# Retrieve for Multiple Years
 
 The figure sizes have been customised so that you can easily put two images side-by-side. 
 
