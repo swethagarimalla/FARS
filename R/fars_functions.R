@@ -152,9 +152,9 @@ fars_summarize_years <- function(years) {
 #' fars_map_state(20, 2020) #Error because \code{year} doesn't exist
 #' }
 #' 
-#' @import dplyr filter
-#' @import maps map
-#' @import graphics points
+#' @importFrom dplyr filter
+#' @importFrom maps map
+#' @importFrom graphics points
 #' 
 #' @export
 
