@@ -25,3 +25,17 @@ for each accident file, each associated with a year. The accident files for each
 within list must be located within the current working directory and must be named in 
 the format 'accident_<year>.csv.bz2'
 }
+\examples{
+\dontrun{
+fars_read_years(2013)
+fars_read_years(list(2013, 2014))
+fars_read_years(2013:2015)
+
+#A not-found warning is thrown and null is returned for the following
+fars_read_years(list(2013, 2014, 2015, 2016))
+fars_read_years(2017)
+}
+
+
+
+}
