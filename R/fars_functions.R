@@ -1,4 +1,3 @@
-if(getRversion() >= "2.15.1")  utils::globalVariables(c("."))
 #' Load CSV File
 #' 
 #' @description  This is a simple function that loads a csv file (using the \code{filename} 
