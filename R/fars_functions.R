@@ -74,7 +74,7 @@ make_filename <- function(year) {
 #' NULL. 
 #' 
 #' @examples 
-#' \dontrun{}
+#' \dontrun{
 #' fars_read_years(2013)
 #' fars_read_years(list(2013, 2014))
 #' fars_read_years(2013:2015)
@@ -82,7 +82,10 @@ make_filename <- function(year) {
 #' #A not-found warning is thrown and null is returned for the following
 #' fars_read_years(list(2013, 2014, 2015, 2016))
 #' fars_read_years(2017)
-#' }#' 
+#' }
+#' 
+#' 
+#' 
 #' @export
 fars_read_years <- function(years) {
         lapply(years, function(year) {
